@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Urban Mobility Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+</head>
+<body>
+    <header>
+        <h1>NYC Urban Mobility Explorer</h1>
+        <p>Real-time analysis of taxi trip patterns across New York City</p>
+    </header>
+
+    <div class="filters">
+        <div class="filter-group">
+            <label for="boroughFilter">Borough:</label>
+            <select id="boroughFilter">
+                <option value="">All Boroughs</option>
+                <option value="Manhattan">Manhattan</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Queens">Queens</option>
+                <option value="Bronx">Bronx</option>
+                <option value="Staten Island">Staten Island</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="timeFilter">Time of Day:</label>
+            <select id="timeFilter">
+                <option value="">All Times</option>
+                <option value="Morning">Morning (5AM-12PM)</option>
+                <option value="Afternoon">Afternoon (12PM-5PM)</option>
+                <option value="Evening">Evening (5PM-9PM)</option>
+                <option value="Night">Night (9PM-5AM)</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label for="hourFilter">Hour:</label>
+            <select id="hourFilter">
+                <option value="">All Hours</option>
+            </select>
+        </div>
+        
+        <button id="applyFilters">Apply Filters</button>
+        <button id="resetFilters">Reset</button>
+    </div>
+
+    <div class="summary-stats" id="summaryStats">
+        <div class="stat-card">
+            <h3 id="totalTrips">-</h3>
+            <p>Total Trips</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="avgFare">-</h3>
+            <p>Average Fare</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="avgDistance">-</h3>
+            <p>Average Distance</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="avgSpeed">-</h3>
+            <p>Average Speed</p>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="map-section">
+            <h2>Trip Distribution by Zone</h2>
+            <div id="map"></div>
+            <p class="insight">Darker zones indicate higher trip volumes. Manhattan dominates with concentrated activity in Midtown and Financial District.</p>
+        </div>
+
+        <div class="charts-section">
+            <div class="chart-container">
+                <h2>Trips by Hour of Day</h2>
+                <canvas id="hourlyChart"></canvas>
+                <p class="insight">Peak demand occurs at 6-7 PM during evening rush hour, with secondary peak at 9 AM. This reveals concentrated office departure times versus dispersed morning commutes.</p>
+            </div>
+
+            <div class="chart-container">
+                <h2>Average Fare by Hour</h2>
+                <canvas id="fareChart"></canvas>
+                <p class="insight">Late-night trips (2-5 AM) command 50-67% higher fares due to longer distances and reduced transit alternatives, creating premium pricing opportunities for drivers.</p>
+            </div>
+
+            <div class="chart-container">
+                <h2>Top 15 Pickup Zones</h2>
+                <canvas id="zonesChart"></canvas>
+                <p class="insight">Airport zones (JFK, LaGuardia) and Manhattan business districts (Midtown, Financial District) generate highest trip volumes, indicating strategic positioning opportunities.</p>
+            </div>
+
+            <div class="chart-container">
+                <h2>Borough Comparison</h2>
+                <canvas id="boroughChart"></canvas>
+                <p class="insight">Manhattan accounts for 90%+ of trips but has lower fare-per-mile due to short, frequent rides. Outer boroughs show longer distances but lower overall demand.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Data Source: NYC Taxi & Limousine Commission | Built with Flask, SQLite, Chart.js & Leaflet</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
