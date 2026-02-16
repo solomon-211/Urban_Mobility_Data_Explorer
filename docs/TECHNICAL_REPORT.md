@@ -172,7 +172,7 @@ FUNCTION bubble_down(index):
 - n = total number of zones (263)
 - k = number of top zones to find (15)
 - For each of n zones: O(log k) heap operation
-- Total: n × log k = 263 × log₂(15) ≈ 263 × 3.9 ≈ 1,026 operations
+- Total: n log k = 263 log₂(15) ≈ 263 3.9 ≈ 1,026 operations
 
 **Space Complexity: O(k)**
 - Heap stores only k elements (15 zones)
@@ -180,9 +180,9 @@ FUNCTION bubble_down(index):
 - Total: O(15) = O(k)
 
 **Comparison with SQL ORDER BY:**
-- SQL ORDER BY uses comparison sort: O(n log n) = 263 × log₂(263) ≈ 263 × 8.04 ≈ 2,114 operations
-- Our heap approach: O(n log k) = 263 × log₂(15) ≈ 1,026 operations
-- **Performance gain: ~2x faster** (more significant as n increases)
+- SQL ORDER BY uses comparison sort: O(n log n) = 263 log₂(263) ≈ 263 8.04 ≈ 2,114 operations
+- Our heap approach: O(n log k) = 263 log₂(15) ≈ 1,026 operations
+- **Performance gain: ~2 faster** (more significant as n increases)
 
 ### Why This Matters
 When k << n (15 << 263), maintaining a small heap of size k is more efficient than sorting all n elements. This principle scales to larger datasets where the performance difference becomes critical.

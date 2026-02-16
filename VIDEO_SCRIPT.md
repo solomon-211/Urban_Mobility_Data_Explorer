@@ -262,5 +262,3 @@ Replace `[Add your video link here]` with your actual video URL
 6. Add link to README.md
 7. Test link works (open in incognito)
 8. Submit project
-
-Good luck! 🎬

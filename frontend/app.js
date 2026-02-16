@@ -45,9 +45,9 @@ function initMap() {
                     const count = feature.properties.trip_count || 0;
                     return {
                         fillColor: getColor(count),
-                        weight: 1,
+                        weight: 2,
                         opacity: 1,
-                        color: 'white',
+                        color: '#333',
                         fillOpacity: 0.7
                     };
                 },
@@ -119,8 +119,38 @@ function loadHourlyChart(borough = '', timeOfDay = '', hour = '') {
                     responsive: true,
                     maintainAspectRatio: true,
                     scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Hour of Day',
+                                font: {
+                                    size: 14
+                                },
+                                color: '#ff9a56'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#333'
+                            }
+                        },
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Trips',
+                                font: {
+                                    size: 14
+                                },
+                                color: '#ff9a56'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#333'
+                            }
                         }
                     }
                 }
@@ -143,8 +173,8 @@ function loadFareChart(hourlyData) {
             datasets: [{
                 label: 'Average Fare ($)',
                 data: hourlyData.map(d => d.avg_fare),
-                borderColor: 'rgba(234, 179, 8, 1)',
-                backgroundColor: 'rgba(234, 179, 8, 0.1)',
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
                 tension: 0.4,
                 fill: true
             }]
@@ -153,8 +183,38 @@ function loadFareChart(hourlyData) {
             responsive: true,
             maintainAspectRatio: true,
             scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Hour of Day',
+                        font: {
+                            size: 14
+                        },
+                        color: '#ff9a56'
+                    },
+                    ticks: {
+                        font: {
+                            size: 12
+                        },
+                        color: '#333'
+                    }
+                },
                 y: {
-                    beginAtZero: false
+                    beginAtZero: false,
+                    title: {
+                        display: true,
+                        text: 'Average Fare ($)',
+                        font: {
+                            size: 14
+                        },
+                        color: '#ff9a56'
+                    },
+                    ticks: {
+                        font: {
+                            size: 12
+                        },
+                        color: '#333'
+                    }
                 }
             }
         }
@@ -192,7 +252,41 @@ function loadZonesChart(borough = '', timeOfDay = '', hour = '') {
                 options: {
                     indexAxis: 'y',
                     responsive: true,
-                    maintainAspectRatio: true
+                    maintainAspectRatio: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Number of Trips',
+                                font: {
+                                    size: 14
+                                },
+                                color: '#ff9a56'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#333'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Pickup Zone',
+                                font: {
+                                    size: 14
+                                },
+                                color: '#ff9a56'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 11
+                                },
+                                color: '#333'
+                            }
+                        }
+                    }
                 }
             });
         })
@@ -222,21 +316,47 @@ function loadBoroughChart(borough = '', timeOfDay = '', hour = '') {
                     datasets: [{
                         label: 'Total Trips',
                         data: data.map(d => d.total_trips || 0),
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.8)',
-                            'rgba(54, 162, 235, 0.8)',
-                            'rgba(255, 206, 86, 0.8)',
-                            'rgba(75, 192, 192, 0.8)',
-                            'rgba(153, 102, 255, 0.8)'
-                        ]
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
+                        borderWidth: 1
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
                     scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Borough',
+                                font: {
+                                    size: 14
+                                },
+                                color: '#ff9a56'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#333'
+                            }
+                        },
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Total Trips',
+                                font: {
+                                    size: 14
+                                },
+                                color: '#ff9a56'
+                            },
+                            ticks: {
+                                font: {
+                                    size: 12
+                                },
+                                color: '#333'
+                            }
                         }
                     }
                 }

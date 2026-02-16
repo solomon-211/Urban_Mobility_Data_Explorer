@@ -1,6 +1,6 @@
 # NYC Urban Mobility Data Explorer
 
-**📹 Video Walkthrough:** [Add your video link here]
+**Video Walkthrough:** [Add your video link here]
 
 A full-stack web application analyzing NYC taxi trip patterns using real-world data from the NYC Taxi & Limousone Commission.
 
@@ -50,7 +50,7 @@ urban-mobility-explorer/
 
 ## Data Setup
 
-⚠️ **Large data files are NOT included in this repository.**
+**Large data files are NOT included in this repository.**
 
 ### Required Files:
 

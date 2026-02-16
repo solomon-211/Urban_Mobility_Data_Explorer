@@ -6,31 +6,33 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: #ffffff;
     color: #333;
     min-height: 100vh;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ff9a56;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    color: #10b981;
+    color: #ffffff;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 header p {
-    color: #666;
+    color: #ffffff;
     font-size: 1.1rem;
+    opacity: 0.95;
 }
 
 .filters {
-    background: white;
+    background: #ffffff;
     padding: 1.5rem;
     margin: 1rem auto;
     max-width: 1400px;
@@ -41,6 +43,7 @@ header p {
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 2px solid #f0f0f0;
 }
 
 .filter-group {
@@ -67,31 +70,40 @@ header p {
 
 .filter-group select:focus {
     outline: none;
-    border-color: #10b981;
+    border-color: #ff9a56;
 }
 
 button {
     padding: 0.6rem 2rem;
-    background: #10b981;
+    background: #ff9a56;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 154, 86, 0.3);
+    min-width: 140px;
 }
 
 button:hover {
-    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 154, 86, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 #resetFilters {
-    background: #eab308;
+    background: #06d6a0;
+    box-shadow: 0 4px 15px rgba(6, 214, 160, 0.3);
 }
 
 #resetFilters:hover {
-    background: #ca8a04;
+    box-shadow: 0 6px 20px rgba(6, 214, 160, 0.4);
+    transform: translateY(-2px);
 }
 
 .summary-stats {
@@ -104,25 +116,38 @@ button:hover {
     justify-content: center;
 }
 
+.stat-card:nth-child(1) h3 { color: #ff9a56; }
+.stat-card:nth-child(2) h3 { color: #ff9a56; }
+.stat-card:nth-child(3) h3 { color: #ff9a56; }
+.stat-card:nth-child(4) h3 { color: #ff9a56; }
+
 .stat-card {
-    background: white;
+    background: #ffffff;
     padding: 1.5rem 2rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
     flex: 1;
     min-width: 200px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ff9a56;
 }
 
+
+
 .stat-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 154, 86, 0.2);
+    border-color: #ff9a56;
 }
 
 .stat-card h3 {
-    color: #10b981;
+    color: #667eea;
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .stat-card p {
@@ -140,15 +165,17 @@ button:hover {
 }
 
 .map-section {
-    background: white;
+    background: #ffffff;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 2px solid #f0f0f0;
 }
 
 .map-section h2 {
-    color: #10b981;
+    color: #ff9a56;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 #map {
@@ -164,17 +191,35 @@ button:hover {
 }
 
 .chart-container {
-    background: white;
+    background: #ffffff;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 2px solid #f0f0f0;
+    border-top: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.chart-container:nth-child(1) { border-top-color: #06d6a0; }
+.chart-container:nth-child(2) { border-top-color: #06d6a0; }
+.chart-container:nth-child(3) { border-top-color: #06d6a0; }
+.chart-container:nth-child(4) { border-top-color: #06d6a0; }
+
+.chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 154, 86, 0.15);
 }
 
 .chart-container h2 {
-    color: #10b981;
     margin-bottom: 1rem;
     font-size: 1.3rem;
+    font-weight: 600;
 }
+
+.chart-container:nth-child(1) h2 { color: #ff9a56; }
+.chart-container:nth-child(2) h2 { color: #ff9a56; }
+.chart-container:nth-child(3) h2 { color: #ff9a56; }
+.chart-container:nth-child(4) h2 { color: #ff9a56; }
 
 .chart-container canvas {
     max-height: 300px;
@@ -183,19 +228,20 @@ button:hover {
 .insight {
     margin-top: 1rem;
     padding: 0.8rem;
-    background: #f8f9fa;
-    border-left: 4px solid #10b981;
+    background: linear-gradient(135deg, rgba(255, 154, 86, 0.08), rgba(6, 214, 160, 0.08));
+    border-left: 4px solid #ff9a56;
     color: #555;
     font-size: 0.9rem;
     line-height: 1.5;
+    border-radius: 5px;
 }
 
 footer {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ff9a56;
     padding: 1.5rem;
     text-align: center;
     margin-top: 2rem;
-    color: #666;
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {
