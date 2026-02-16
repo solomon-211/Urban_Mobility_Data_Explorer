@@ -2,7 +2,7 @@
 
 **Video Walkthrough:** [Add your video link here]
 
-A full-stack web application analyzing NYC taxi trip patterns using real-world data from the NYC Taxi & Limousone Commission.
+A full-stack web application analyzing NYC taxi trip patterns using real-world data from the NYC Taxi & Limousine Commission.
 
 ## Features
 
@@ -18,10 +18,10 @@ A full-stack web application analyzing NYC taxi trip patterns using real-world d
 ## Project Structure
 
 ```
-urban-mobility-explorer/
+Urban_Mobility_Data_Explorer/
 ├── backend/
 │   ├── data/
-│   │   ├── yellow_tripdata.parquet
+│   │   ├── yellow_tripdata.csv (download separately)
 │   │   ├── taxi_zone_lookup.csv
 │   │   ├── taxi_zones.shp/dbf/shx/prj
 │   │   ├── taxi_zones.geojson (generated)
@@ -32,6 +32,7 @@ urban-mobility-explorer/
 │   │   ├── convert_zones.py
 │   │   ├── clean_data.py
 │   │   └── insert_db.py
+│   ├── algorithms.py
 │   ├── app.py
 │   ├── database.py
 │   └── requirements.txt
@@ -39,7 +40,11 @@ urban-mobility-explorer/
 │   ├── index.html
 │   ├── style.css
 │   └── app.js
-└── README.md
+├── docs/
+│   └── TECHNICAL_REPORT.md
+├── .gitignore
+├── README.md
+└── VIDEO_SCRIPT.md
 ```
 
 ## Prerequisites
@@ -54,10 +59,11 @@ urban-mobility-explorer/
 
 ### Required Files:
 
-1. **Yellow Taxi Trip Data** (`yellow_tripdata.parquet`)
+1. **Yellow Taxi Trip Data** (`yellow_tripdata.csv`)
    - Download: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
-   - Select any month from 2023/2024
+   - Select January 2024 (or any month from 2023/2024)
    - Place in `backend/data/`
+   - File size: ~647MB
 
 2. **Taxi Zone Lookup** (`taxi_zone_lookup.csv`)
    - Download: https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv
@@ -78,14 +84,14 @@ curl -o taxi_zones.zip https://d37ci6vzurychx.cloudfront.net/misc/taxi_zones.zip
 unzip taxi_zones.zip -d backend/data/
 ```
 
-Manually download the trip data parquet file and place it in `backend/data/`.
+Manually download the trip data CSV file from NYC TLC website and place it in `backend/data/`.
 
 ## Installation & Setup
 
 ### 1. Install Dependencies
 
 ```bash
-cd urban-mobility-explorer
+cd Urban_Mobility_Data_Explorer
 pip install flask flask-cors pandas geopandas pyarrow
 ```
 
@@ -118,7 +124,8 @@ Generates `backend/data/mobility.db` (~10-15 minutes)
 ### 5. Start Backend API
 
 ```bash
-python backend/app.py
+cd backend
+python app.py
 ```
 
 Server runs on http://localhost:5000

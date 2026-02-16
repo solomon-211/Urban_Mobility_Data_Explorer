@@ -112,23 +112,33 @@
 **SCREEN**: Browser with dashboard at http://localhost:8000
 
 **SAY**:
-"Now let me demonstrate the interactive dashboard."
+"Now let me demonstrate the interactive dashboard with its professional orange and green design."
 
 **ACTION**:
 
-**Point to summary cards**: "At the top we have summary statistics: 7.4 million total trips, average fare of $12.16, average distance of 2.83 miles, and average speed of 11.7 mph."
+**Point to header**: "The dashboard features an orange header with the project title."
 
-**Scroll to charts**: "The dashboard has 4 interactive visualizations:"
+**Point to filters**: "Below are three filter dropdowns for Borough, Time of Day, and Hour, with an orange Apply Filters button and green Reset button."
 
-**Chart 1 - Trips by Hour**: "This bar chart shows peak demand at 6-7 PM during evening rush hour, with a secondary peak at 9 AM. Notice the evening peak is 18% higher than morning, revealing concentrated office departure times."
+**Point to summary cards**: "At the top we have summary statistics with orange borders: 7.4 million total trips, average fare of $12.16, average distance of 2.83 miles, and average speed of 11.7 mph."
 
-**Chart 2 - Average Fare**: "This line chart shows late-night trips between 2-5 AM have 50-67% higher fares due to longer distances and reduced transit alternatives."
+**Scroll down**: "The dashboard features a clean white background with professional orange and green color scheme."
 
-**Chart 3 - Top Zones**: "This horizontal bar chart shows the busiest pickup zones, generated using our custom heap algorithm. Airport zones and Manhattan business districts dominate."
+**Point to map section**: "On the left, we have the choropleth map showing trip distribution by zone."
 
-**Chart 4 - Borough Comparison**: "Manhattan accounts for over 90% of trips but has higher fare-per-mile due to traffic congestion."
+**Point to fare chart**: "On the right, the Average Fare chart displays side-by-side with the map."
 
-**Scroll to map**: "The choropleth map color-codes zones by trip volume. Darker red indicates higher activity."
+**Scroll to charts**: "Below, we have three more visualizations in a grid layout. All charts use consistent green coloring for data visualization:"
+
+**Chart 1 - Trips by Hour**: "This green bar chart shows peak demand at 6-7 PM during evening rush hour, with a secondary peak at 9 AM. Notice the evening peak is 18% higher than morning, revealing concentrated office departure times."
+
+**Chart 2 - Average Fare**: "This green line chart shows late-night trips between 2-5 AM have 50-67% higher fares due to longer distances and reduced transit alternatives."
+
+**Chart 3 - Top Zones**: "This vertical green bar chart shows the busiest pickup zones, generated using our custom heap algorithm. Airport zones and Manhattan business districts dominate."
+
+**Chart 4 - Borough Comparison**: "Manhattan accounts for over 90% of trips. This green bar chart shows the trip distribution across all five boroughs."
+
+**Scroll to map**: "The choropleth map color-codes zones by trip volume. Darker red indicates higher activity. Notice the map has dark gray borders matching our design theme."
 
 **ACTION**: Hover over Manhattan zones to show tooltips
 
@@ -138,13 +148,13 @@
 **ACTION**:
 - Select "Manhattan" from Borough dropdown
 - Select "Evening" from Time of Day dropdown
-- Click "Apply Filters"
+- Click orange "Apply Filters" button
 - Wait for charts to reload
 
 **SAY**:
 "Notice all charts update dynamically. The filters apply across all visualizations simultaneously, allowing us to analyze specific patterns like Manhattan evening rush hour."
 
-**ACTION**: Click "Reset" button to clear filters
+**ACTION**: Click green "Reset" button to clear filters
 
 ---
 
