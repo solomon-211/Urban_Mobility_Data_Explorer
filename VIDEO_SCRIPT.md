@@ -1,5 +1,6 @@
 # VIDEO WALKTHROUGH SCRIPT - 5 MINUTES
 # NYC Urban Mobility Explorer
+# TEAM OF 3 MEMBERS
 
 ## PREPARATION (Before Recording)
 1. Close unnecessary browser tabs and applications
@@ -10,6 +11,16 @@
 6. Open http://localhost:8000 in browser
 7. Test that everything works
 8. Use OBS Studio, Loom, or Windows Game Bar (Win+G) to record
+9. Decide who records which segment (see division below)
+
+---
+
+# MEMBER 1: INTRODUCTION & DATA ENGINEERING (0:00 - 1:45)
+
+## PREPARATION FOR MEMBER 1:
+- Open VS Code with backend/scripts/clean_data.py
+- Have backend/data/cleaning_log.txt ready to show
+- Have dashboard open in browser for introduction
 
 ---
 
@@ -23,6 +34,8 @@
 **ACTION**: 
 - Briefly scroll through dashboard showing charts and map
 - Point to filter controls
+
+**TRANSITION**: "Now let me show you the data processing pipeline."
 
 ---
 
@@ -54,9 +67,23 @@
 
 **ACTION**: Show cleaning_log.txt briefly
 
+**TRANSITION**: "Now I'll hand over to [Member 2 Name] to explain our custom algorithm implementation."
+
+**END OF MEMBER 1 RECORDING** (Stop at 1:45)
+
 ---
 
-## SEGMENT 3: CUSTOM ALGORITHM (1:30 - 2:30)
+# MEMBER 2: ALGORITHM & DATABASE (1:45 - 3:30)
+
+## PREPARATION FOR MEMBER 2:
+- Open VS Code with backend/algorithms.py
+- Open VS Code with backend/app.py (for showing algorithm usage)
+- Have DB Browser for SQLite open with mobility.db loaded
+- Practice explaining heap operations
+
+---
+
+## SEGMENT 3: CUSTOM ALGORITHM (1:45 - 2:30)
 
 **SCREEN**: VS Code - open backend/algorithms.py
 
@@ -79,6 +106,8 @@
 "This algorithm is connected to the top-zones API endpoint, replacing SQL ORDER BY with our custom implementation."
 
 **ACTION**: Briefly show app.py line 95-130 where algorithm is used
+
+**TRANSITION**: "Now let me show you the database design."
 
 ---
 
@@ -105,9 +134,24 @@
 **SAY**:
 "This normalized design ensures data integrity and enables efficient JOIN queries."
 
+**TRANSITION**: "Now [Member 3 Name] will demonstrate the interactive dashboard."
+
+**END OF MEMBER 2 RECORDING** (Stop at 3:30)
+
 ---
 
-## SEGMENT 5: LIVE DASHBOARD DEMO (3:15 - 4:30)
+# MEMBER 3: DASHBOARD DEMO & SUMMARY (3:30 - 5:00)
+
+## PREPARATION FOR MEMBER 3:
+- Have dashboard open at http://localhost:8000
+- Ensure backend is running (python backend/app.py)
+- Ensure frontend is running (python -m http.server 8000)
+- Test filters work before recording
+- Have VS Code ready for quick code flashes
+
+---
+
+## SEGMENT 5: LIVE DASHBOARD DEMO (3:30 - 4:30)
 
 **SCREEN**: Browser with dashboard at http://localhost:8000
 
@@ -179,6 +223,103 @@
 
 **SAY**:
 "Thank you for watching."
+
+**END OF MEMBER 3 RECORDING** (Stop at 5:00)
+
+---
+
+# TEAM COORDINATION
+
+## RECORDING OPTIONS:
+
+### OPTION A: Three Separate Recordings (Recommended)
+**Each member records their segment separately, then combine videos**
+
+**Advantages:**
+- Can re-record individual segments if mistakes
+- Less pressure on each person
+- Easier to edit
+
+**Steps:**
+1. Member 1 records 0:00 - 1:45 (saves as member1.mp4)
+2. Member 2 records 1:45 - 3:30 (saves as member2.mp4)
+3. Member 3 records 3:30 - 5:00 (saves as member3.mp4)
+4. Use video editor to combine (DaVinci Resolve, Windows Video Editor)
+
+### OPTION B: One Continuous Recording
+**All three members present together in one session**
+
+**Advantages:**
+- Natural transitions
+- Shows teamwork
+- No editing needed
+
+**Steps:**
+1. All members sit together
+2. One person controls screen
+3. Members take turns speaking at their segments
+4. Record entire 5 minutes in one take
+
+### OPTION C: Screen Recording + Voice Over
+**One person records screen, all three do voice over**
+
+**Advantages:**
+- Smooth screen transitions
+- Can perfect voice separately
+
+**Steps:**
+1. One person records all screen actions (no voice)
+2. Each member records their voice segment separately
+3. Combine in video editor
+
+---
+
+## MEMBER RESPONSIBILITIES SUMMARY:
+
+### MEMBER 1 (0:00 - 1:45):
+**GitHub Push:**
+- Documentation: README.md, docs/TECHNICAL_REPORT.md, VIDEO_SCRIPT.md
+
+**Video Segment:**
+- Introduction
+- Data cleaning pipeline
+- Feature engineering
+
+**Files to Show:**
+- Dashboard (overview)
+- backend/scripts/clean_data.py
+- backend/data/cleaning_log.txt
+
+---
+
+### MEMBER 2 (1:45 - 3:30):
+**GitHub Push:**
+- Backend: backend/app.py, backend/database.py, backend/algorithms.py, backend/scripts/
+
+**Video Segment:**
+- Custom algorithm
+- Database schema
+- API endpoints
+
+**Files to Show:**
+- backend/algorithms.py
+- backend/app.py
+- DB Browser for SQLite (mobility.db)
+
+---
+
+### MEMBER 3 (3:30 - 5:00):
+**GitHub Push:**
+- Frontend: frontend/index.html, frontend/style.css, frontend/app.js, .gitignore
+
+**Video Segment:**
+- Live dashboard demo
+- Filter functionality
+- Technical summary
+
+**Files to Show:**
+- Live dashboard at http://localhost:8000
+- Quick flashes of code files
 
 ---
 
